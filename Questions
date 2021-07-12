@@ -1,0 +1,7 @@
+- In adventuregame, I was attempting to use a variable (hp) in a new function. When writing the funciton,
+it says the variable is undefined even though the variable is before that function and i can use the variable as str(hp) in a different function. Why?
+
+
+- Lots of issues with if, elif and else statements. Why arent elif functions working?
+ex. Tried to add a open door elif in adventuregame.py in the instance that open the door is not entered.
+When the code runs and open door is input it ignores it and runs the else statement insead.
