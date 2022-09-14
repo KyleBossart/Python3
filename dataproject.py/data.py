@@ -1,6 +1,4 @@
-from email import header
 import random
-from urllib.request import HTTPDefaultErrorHandler
 import xlsxwriter
 
 def main():
@@ -48,7 +46,6 @@ def main():
 
     workbook.close()
     
-
 
 if __name__ == "__main__":
     main()
