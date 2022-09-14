@@ -10,9 +10,13 @@ def main():
     shortTodaysDate = todaysDate.strftime("%b%d%m")
     longTodaysDate = todaysDate.strftime("%x")
 
-    #
+    # Variable for workbook name the user chooses.
     workbookName = input("Name of spreadsheet: ")
     workbookName = workbookName + "-" + shortTodaysDate
+
+    # Data types to populate columns
+    make = input("Enter Make: ").capitalize()
+    model = input("Enter Model: ").capitalize()
 
     # Creates Excel workbook.
     workbook = xlsxwriter.Workbook(f"{workbookName}.xlsx")
@@ -22,7 +26,7 @@ def main():
     todaysDate = todaysDate.strftime("%x")
     
     # Takes input from users, splits by whitespace, then creates list of split items.
-    serials = list(map(str, input("Enter multiple values: ").split()))
+    serials = list(map(str, input("Enter serial numbers with one space in between: ").split()))
 
     # Format for all cells below header.
     cellFormat = workbook.add_format()
@@ -54,12 +58,9 @@ def main():
     # Defining a variable so the "serials" list iterator can be modified.
     cycleSerials = 0
 
+
     # Cycles through the length of the "serials" list to populate cells.
     for row in range(len(serials)):
-
-        # Data types to populate columns
-        make = random.choice(["Dell", "Apple"])
-        model = random.choice(["Laptop", "Desktop"])
         
         """ 
         Writes to the specified column, 
